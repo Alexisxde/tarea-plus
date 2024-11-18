@@ -1,5 +1,7 @@
 <header class="flex items-center justify-between px-10 py-5">
-  <div>Tarea+</div>
+  <div class="w-24">
+    <img class="size-full" src="/tarealogo.svg" alt="Tarea+ Logo" />
+  </div>
   <div class="flex items-center justify-center gap-4">
     <div class="hidden">
       <input type="checkbox" id="checkbox" />
@@ -25,23 +27,23 @@
   </div>
 </header>
 <script>
-  const checkbox = document.getElementById('checkbox') as HTMLInputElement
-  const HTML = document.documentElement
-  const darkMode = localStorage.getItem('darkMode')
-  if (darkMode === 'enabled') {
-    HTML.classList.add('dark')
-    checkbox.checked = true
+  const $checkbox = document.getElementById('checkbox') as HTMLInputElement
+  const $HTML = document.documentElement
+  const $darkMode = localStorage.getItem('darkMode')
+  if ($darkMode === 'enabled') {
+    $HTML.classList.add('dark')
+    $checkbox.checked = true
   } else {
-    HTML.classList.remove('dark')
-    checkbox.checked = false
+    $HTML.classList.remove('dark')
+    $checkbox.checked = false
   }
 
-  checkbox?.addEventListener('change', () => {
-    if (checkbox.checked) {
-      HTML.classList.add('dark')
+  $checkbox?.addEventListener('change', () => {
+    if ($checkbox.checked) {
+      $HTML.classList.add('dark')
       localStorage.setItem('darkMode', 'enabled')
     } else {
-      HTML.classList.remove('dark')
+      $HTML.classList.remove('dark')
       localStorage.setItem('darkMode', 'disabled')
     }
   })
