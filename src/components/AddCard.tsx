@@ -27,10 +27,10 @@ export default function AddCard({ column, setCards }: Props) {
       }, 4000)
       return
     }
-    const newCard = {
-      column,
+    const newCard: Card = {
+      id: Math.random().toString(),
       title: text.trim(),
-      id: Math.random().toString()
+      column
     }
     setCards(pv => [...pv, newCard])
     setAdding(false)
