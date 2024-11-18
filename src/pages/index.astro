@@ -1,10 +1,40 @@
 ---
-import Todo from '@components/Todo.tsx'
+import Content from '@components/Content.astro'
+import Navegation from '@components/Navegation.astro'
+import NotMobile from '@components/NotMobile.astro'
 import Layout from '@layout/Layout.astro'
+
+const script = true
 ---
 
 <Layout title="Tarea+">
-  <main class="h-screen w-full bg-neutral-900 text-neutral-50">
-    <Todo client:load />
-  </main>
+  <div id="touch-content" style="display: none;">
+    <NotMobile />
+  </div>
+  <div id="mouse-content" style="display: none;">
+    <Navegation />
+    <Content />
+  </div>
 </Layout>
+{script && (
+  <script>
+  const touchContent = document.getElementById('touch-content')
+  const mouseContent = document.getElementById('mouse-content')
+
+  const isTouchDevice = () => {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0
+    )
+  }
+  if (isTouchDevice()) {
+    if (touchContent) {
+      touchContent.style.display = 'block';
+    }
+  } else {
+    if (mouseContent) {
+      mouseContent.style.display = 'block';
+    }
+  }
+  </script>
+)}

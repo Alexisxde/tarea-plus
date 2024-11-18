@@ -108,7 +108,7 @@ export default function Column({
   }
 
   return (
-    <section className="w-full">
+    <section className="w-full min-w-56">
       <div className="mb-3 flex items-center justify-between">
         <h3 className={`font-medium ${headingColor}`}>{title}</h3>
         <span className="rounded text-sm text-neutral-400">

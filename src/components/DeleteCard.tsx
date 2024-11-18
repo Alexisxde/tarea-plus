@@ -34,7 +34,7 @@ export default function DeleteCard({ setCards }: Props) {
       onDrop={handleDragEnd}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
-      className={`mt-10 grid size-56 shrink-0 place-content-center rounded border text-3xl ${
+      className={`grid size-56 shrink-0 place-content-center rounded border text-3xl ${
         active
           ? 'border-red-800 bg-red-800/20 text-red-500'
           : 'border-neutral-500 bg-neutral-500/20 text-neutral-500'

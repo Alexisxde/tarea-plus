@@ -20,7 +20,7 @@ export default function Todos() {
   }, [])
 
   return (
-    <section className="mx-auto flex h-full w-full max-w-[1366px] gap-6 p-10">
+    <section className="mx-auto flex h-full w-full gap-6 px-10">
       <Column
         title="Nuevas"
         column="new"
