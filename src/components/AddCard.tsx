@@ -34,6 +34,7 @@ export default function AddCard({ column, setCards }: Props) {
     }
     setCards(pv => [...pv, newCard])
     setAdding(false)
+    setText('')
   }
 
   return (
