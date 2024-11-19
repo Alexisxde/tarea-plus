@@ -3,8 +3,6 @@ import Content from '@components/Content.astro'
 import Navegation from '@components/Navegation.astro'
 import NotMobile from '@components/NotMobile.astro'
 import Layout from '@layout/Layout.astro'
-
-const script = true
 ---
 
 <Layout title="Tarea+ - Gestión de tareas y productividad">
@@ -16,25 +14,20 @@ const script = true
     <Content />
   </div>
 </Layout>
-{script && (
-  <script>
+<script>
   const touchContent = document.getElementById('touch-content')
   const mouseContent = document.getElementById('mouse-content')
 
   const isTouchDevice = () => {
-    return (
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0
-    )
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
   }
   if (isTouchDevice()) {
     if (touchContent) {
-      touchContent.style.display = 'block';
+      touchContent.style.display = 'block'
     }
   } else {
     if (mouseContent) {
-      mouseContent.style.display = 'block';
+      mouseContent.style.display = 'block'
     }
   }
-  </script>
-)}
+</script>
